@@ -4,14 +4,21 @@
 # and, if needed, shared apisecret and/or token authentication mechanism
 # between application(s) and Janus.
 general: {
-  # Configuration files folder
-  configs_folder = "/etc/janus"
+  #
+  # Configuration files folder  ivadim/fruitnanny
+  # configs_folder = "/etc/janus"
   # Plugins folder
-  plugins_folder = "/usr/lib/arm-linux-gnueabihf/janus/plugins"
+  # plugins_folder = "/usr/lib/arm-linux-gnueabihf/janus/plugins"
   # Transports folder
-  transports_folder = "/usr/lib/arm-linux-gnueabihf/janus/transports"
+  # transports_folder = "/usr/lib/arm-linux-gnueabihf/janus/transports"
   # Event handlers folder
-  events_folder = "/usr/lib/arm-linux-gnueabihf/janus/events"
+  # events_folder = "/usr/lib/arm-linux-gnueabihf/janus/events"
+  
+  configs_folder = "/opt/janus/etc/janus"                 # Configuration files folder
+  plugins_folder = "/opt/janus/lib/janus/plugins"                 # Plugins folder
+  transports_folder = "/opt/janus/lib/janus/transports"   # Transports folder
+  events_folder = "/opt/janus/lib/janus/events"                   # Event handlers folder
+  loggers_folder = "/opt/janus/lib/janus/loggers"                 # External loggers folder
 
   # The next settings configure logging
   # Whether the Janus output should be written to stdout or not (default=true)
@@ -148,8 +155,8 @@ media: {
 # be used for gathering candidates, and enable or disable the
 # internal libnice debugging, if needed.
 nat: {
-  #stun_server = "stun.voip.eutelia.it"
-  #stun_port = 3478
+  stun_server = "stun.voip.eutelia.it"
+  stun_port = 3478
   nice_debug = false
   #full_trickle = true
   #ice_lite = true
