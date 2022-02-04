@@ -1,21 +1,8 @@
 #!/bin/bash
-light_pin=2
-gpio -g mode $light_pin out
-
-function on {
-	gpio -g write $light_pin 1
-}
-
-function off {
-        gpio -g write $light_pin 0
-}
-
-function status {
-	gpio -g read $light_pin
-}
-
-case $1 in  
-  on) on ;; 
-  off) off ;; 
-  status) status ;; 
+light_pin=14
+echo "out" > /sys/class/gpio/gpio$light_pin/direction
+case $1 in
+  on ) echo "1" > /sys/class/gpio/gpio$light_pin/value ;;
+  off )  echo "0" > /sys/class/gpio/gpio$light_pin/value ;;
+  status )  cat /sys/class/gpio/gpio$light_pin/value ;;
 esac
