@@ -10,7 +10,7 @@ var selectedStream = null;
 var target = document.getElementById('spinner');
 spinner = new Spinner().spin(target);
 var streamContext = StreamContext;
-var audioSpectrumWidget = AudioSpectrumWidget;
+//var audioSpectrumWidget = AudioSpectrumWidget;
 
 $(document).ready(function() {
 	// Initialize the library (all console debuggers enabled)
@@ -96,7 +96,7 @@ $(document).ready(function() {
 								
 								Janus.attachMediaStream($('#video').get(0), stream);
 								streamContext.init(stream);
-								audioSpectrumWidget.enable();
+								//audioSpectrumWidget.enable();
 								
 							},
 							oncleanup: function() {
